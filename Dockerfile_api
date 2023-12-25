@@ -1,0 +1,23 @@
+# Указываем базовый образ Python
+FROM python:3.11
+
+# Устанавливаем переменную окружения для Python
+ENV PYTHONUNBUFFERED 1
+
+# Устанавливаем рабочую директорию внутри контейнера
+WORKDIR /app-api
+
+# Копируем файлы проекта в контейнер
+COPY app-api/ /app-api/
+
+# Устанавливаем зависимости проекта
+RUN pip install -r /app-api/requirements.txt
+
+# Запускаем миграции
+RUN python /app-api/manage.py migrate
+
+# Открываем порт для сервера Django
+EXPOSE 8000
+
+# Запускаем сервер
+CMD python /app-api/manage.py runserver 0.0.0.0:8000
