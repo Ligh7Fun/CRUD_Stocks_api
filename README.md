@@ -72,5 +72,3 @@ docker build -t stockes_api -f Dockerfile_api .
 docker run -d -p 8000:8000 stockes_api
 ```
 
-
-```
