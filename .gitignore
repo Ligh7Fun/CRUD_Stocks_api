@@ -1,0 +1,11 @@
+.env
+mydatabase
+__pycache__
+*.log
+*.pyc
+*.pyo
+*.pyd
+*.egg
+*.egg-info
+*.so
+*.a
