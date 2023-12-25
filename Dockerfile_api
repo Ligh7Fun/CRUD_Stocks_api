@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app-api
 
 # Копируем файлы проекта в контейнер
-COPY app-api/ /app-api/
+COPY . /app-api/
 
 # Устанавливаем зависимости проекта
 RUN pip install -r /app-api/requirements.txt
