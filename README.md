@@ -56,4 +56,20 @@ manage.py migrate
 
 ```bash
 python manage.py runserver
+
+## Docker
+
+Билд
+
+```
+docker build -t stockes_api -f Dockerfile_api .
+```
+
+Запуск
+
+```
+docker run -d -p 8000:8000 stockes_api
+```
+
+
 ```
